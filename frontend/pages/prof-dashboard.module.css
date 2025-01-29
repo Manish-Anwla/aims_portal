@@ -1,0 +1,278 @@
+.container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #121212, #1e1e1e); /* Subtle gradient background */
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    background-color: #333;
+    color: #e0e0e0;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #1565c0;
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298, #4a90e2); /* Enhanced gradient */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    border-radius: 8px; /* Rounded edges */
+    animation: fadeIn 1s ease-in-out; /* Smooth entrance animation */
+  }
+  
+  .navbar .email {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar .addCourse {
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4a90e2, #357ab8); /* Gradient button */
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill-shaped button */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar .addCourse:hover {
+    background: linear-gradient(45deg, #357ab8, #2a5298);
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+
+  .navbar .coursesButton {
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4a90e2, #357ab8); /* Gradient button */
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill-shaped button */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+  }
+  
+  .navbar .coursesButton:hover {
+    background: linear-gradient(45deg, #357ab8, #2a5298);
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+
+  .navbar .enrollmentRequestsButton {
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(45deg, #4a90e2, #357ab8); /* Gradient button */
+    padding: 10px 20px;
+    border-radius: 20px; /* Pill-shaped button */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+  }
+  
+  .navbar .enrollmentRequestsButton:hover {
+    background: linear-gradient(45deg, #357ab8, #2a5298);
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
+  .courseList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .courseItem {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #e0e0e0;
+  }
+  
+  .courseItem button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .courseItem button:hover {
+    background-color: #1565c0;
+    transform: scale(1.05);
+  }
+  
+  /* Smooth fade-in effect for the navbar */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  .modal.show {
+    display: block; /* Show the modal when .show class is added */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .acceptButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .acceptButton:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+  }
+  
+  .rejectButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .rejectButton:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+  }
+
+  .viewEnrolledButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .viewEnrolledButton:hover {
+    background-color: #1565c0;
+    transform: scale(1.05);
+  }
+
+  .backButton {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #25282a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #34383d;
+    transform: scale(1.05);
+  }
